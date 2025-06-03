@@ -21,6 +21,10 @@ pipeline {
 
                     // Build the application (skip tests for now)
                     sh './gradlew clean build -x test'
+
+                    // For Maven projects, use this instead:
+                    // sh 'chmod +x ./mvnw'
+                    // sh './mvnw clean package -DskipTests'
                 }
             }
         }
@@ -30,19 +34,21 @@ pipeline {
                 script {
                     // Run unit tests
                     sh './gradlew test'
+
+                    // For Maven:
+                    // sh './mvnw test'
                 }
 
-                // Fix: Use junit instead of publishTestResults
-                junit testResultsPattern: 'build/test-results/test/*.xml', allowEmptyResults: true
+                // Publish test results
+                publishTestResults testResultsPattern: 'build/test-results/test/*.xml'
             }
         }
 
         stage('Code Quality Check') {
             steps {
                 script {
-                    // Simplified: just run compilation checks
-                    sh './gradlew compileKotlin compileTestKotlin'
-                    echo "✅ Code quality check passed"
+                    // Run code quality checks
+                    sh './gradlew check'
                 }
             }
         }
@@ -58,11 +64,11 @@ pipeline {
         }
 
         success {
-            echo '✅ Build and tests completed successfully, zaba !'
+            echo '✅ Build and tests completed successfully !'
         }
 
         failure {
-            echo '❌ Build or tests failed, zaba !'
+            echo '❌ Build or tests failed !'
         }
     }
 }
