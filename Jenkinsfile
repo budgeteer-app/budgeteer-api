@@ -42,12 +42,7 @@ pipeline {
                 // Publish test results (fixed step name)
                 publishTestResults testResultsPattern: 'build/test-results/test/*.xml'
             }
-            post {
-                always {
-                    // Alternative: Use junit step if publishTestResults doesn't work
-                    // junit 'build/test-results/test/*.xml'
-                }
-            }
+
         }
 
         stage('Code Quality Check') {
