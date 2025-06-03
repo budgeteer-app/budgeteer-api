@@ -4,7 +4,6 @@ build/
 .idea/copilot/
 out/
 logs/
-build/*
 
 ### Windows template
 # Windows thumbnail cache files

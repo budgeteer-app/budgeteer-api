@@ -6,9 +6,6 @@ plugins {
 	kotlin("jvm") version "1.9.24"
 	kotlin("plugin.spring") version "1.9.24"
 	kotlin("plugin.jpa") version "1.9.22"
-	id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
-	id("io.gitlab.arturbosch.detekt") version "1.23.4"
-	jacoco
 }
 
 group = "com.api"
