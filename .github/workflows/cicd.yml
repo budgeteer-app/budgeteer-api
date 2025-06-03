@@ -106,7 +106,7 @@ jobs:
             echo "Starting deployment..."
             
             # Navigate to infrastructure directory
-            cd /infra
+            cd ${{ secrets.INFRA_PATH }}
             
             # Pull the latest image
             docker pull anaschhilif/budgeteer:latest
