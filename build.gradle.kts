@@ -38,6 +38,7 @@ dependencies {
 	implementation ("io.springfox:springfox-boot-starter:3.0.0")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("io.micrometer:micrometer-registry-prometheus")
+	implementation("com.github.loki4j:loki-logback-appender:1.4.2")
 }
 
 tasks.withType<KotlinCompile> {

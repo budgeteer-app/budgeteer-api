@@ -5,3 +5,4 @@ build/
 out/
 logs/
 build/*
+.DS_Store
