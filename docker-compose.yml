@@ -1,6 +1,6 @@
 services:
   budgeteer:
-    image: budgeteer:latest
+    image: anaschhilif/budgeteer:latest
     container_name: budgeteer
     ports:
       - "8080:8080"
