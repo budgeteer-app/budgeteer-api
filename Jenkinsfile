@@ -64,11 +64,11 @@ pipeline {
         }
 
         success {
-            echo '✅ Build and tests completed successfully, wa zabaaaaaaa!'
+            echo '✅ Build and tests completed successfully !'
         }
 
         failure {
-            echo '❌ Build or tests failed, wa zabaaaaaaa!'
+            echo '❌ Build or tests failed !'
         }
     }
 }
