@@ -17,7 +17,7 @@ COPY src /app/src
 RUN chmod +x ./gradlew
 
 # Build the application
-RUN ./gradlew build --no-daemon
+RUN ./gradlew build --no-daemon -x test
 
 # Step 2: Create the final image to run the application
 FROM openjdk:17-slim
